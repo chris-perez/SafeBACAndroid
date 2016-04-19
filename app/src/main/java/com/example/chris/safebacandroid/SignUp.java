@@ -10,6 +10,7 @@ import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -37,6 +38,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+
+import static android.Manifest.permission.READ_CONTACTS;
 
 
 /**
@@ -261,6 +264,9 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
 
   @Override
   public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
+    if (!mayRequestContacts()) {
+      return null;
+    }
     return new CursorLoader(this,
         // Retrieve data rows for the device user's 'profile' contact.
         Uri.withAppendedPath(ContactsContract.Profile.CONTENT_URI,
@@ -274,6 +280,10 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
         // Show primary email addresses first. Note that there won't be
         // a primary email address if the user hasn't specified one.
         ContactsContract.Contacts.Data.IS_PRIMARY + " DESC");
+  }
+
+  private boolean mayRequestContacts() {
+    return checkCallingOrSelfPermission(READ_CONTACTS) == PackageManager.PERMISSION_GRANTED;
   }
 
   @Override
