@@ -336,7 +336,9 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
         request.put("name", mName);
         request.put("email", mEmail);
         request.put("password", mPassword);
-        request.put("birthdate", mDate);
+        request.put("birthDate", mDate);
+        request.put("sex", "male");
+        request.put("weight", 160);
       } catch (JSONException e) {
         e.printStackTrace();
         return null;

@@ -20,7 +20,7 @@ import java.util.Map;
  * Created by cperez3 on 6/16/2015.
  */
 public class APICaller {
-  static final String BASE_URL = "http://localhost:9000";
+  static final String BASE_URL = "http://ec2-52-34-240-224.us-west-2.compute.amazonaws.com:9000";
   public static String authID = "";
   static final String MANAGE_AUTH_PATH = "/user/auth";
   static final String MANAGE_PROFILE_PATH = "/user/profile";
