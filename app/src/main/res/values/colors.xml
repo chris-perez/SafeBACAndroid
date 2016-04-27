@@ -3,10 +3,13 @@
 
     <color name="darkBlue00">#384068</color>
     <color name="lightBlue00">#5cbad9</color>
+    <color name="lightBlue01">#abd0dc</color>
+    <color name="lightBlue02">#d6e0e4</color>
     <color name="orange00">#fda745</color>
     <color name="orange01">#ffc880</color>
     <color name="orange02">#ffbb62</color>
-
+    <color name="orange03">#ede0ce</color>
+    <color name="grey00">#dadada</color>
     <color name="black00">#000000</color>
     <color name="white00">#ffffff</color>
     <color name="transparent">#00ffffff</color>

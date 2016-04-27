@@ -22,7 +22,7 @@ public class Catalogue_Activity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_catalogue);
+        setContentView(R.layout.activity_catalogue_temp);
 
 
 
