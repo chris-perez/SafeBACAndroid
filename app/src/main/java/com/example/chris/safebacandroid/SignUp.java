@@ -23,9 +23,11 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,7 +48,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  * A login screen that offers login via email/password.
  */
 public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClickListener{
-  public static final String PREFS_NAME = "MRPrefs";
+  public static final String PREFS_NAME = "SafeBACPrefs";
   /**
    * Keep track of the login task to ensure we can cancel it if requested.
    */
@@ -57,6 +59,9 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
   private EditText mEmailView;
   private EditText mPasswordView;
   private EditText mBirthdateView;
+
+  private EditText mWeightView;
+  private Spinner mSexSpinner;
 
   private Calendar birhtdate;
 
@@ -94,6 +99,14 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
     mBirthdateView.requestFocus();
     setDateTimeField();
 
+    mWeightView = (EditText) findViewById(R.id.weight);
+    mSexSpinner = (Spinner) findViewById(R.id.sex);
+
+    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sex_array,
+        android.R.layout.simple_spinner_item);
+    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+    mSexSpinner.setAdapter(adapter);
+
     Button mEmailSignInButton = (Button) findViewById(R.id.button_signup_form);
     mEmailSignInButton.setOnClickListener(new OnClickListener() {
       @Override
@@ -104,6 +117,8 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
 
     mLoginFormView = findViewById(R.id.email_signup_form);
     mProgressView = findViewById(R.id.login_progress);
+
+
   }
 
   private void setDateTimeField() {
@@ -148,12 +163,15 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
     mEmailView.setError(null);
     mPasswordView.setError(null);
     mBirthdateView.setError(null);
+    mWeightView.setError(null);
 
     // Store values at the time of the login attempt.
     String name = mNameView.getText().toString();
     String email = mEmailView.getText().toString();
     String password = mPasswordView.getText().toString();
     String birthdate = mBirthdateView.getText().toString();
+    int weight = Integer.parseInt(mWeightView.getText().toString());
+    String sex = mSexSpinner.getSelectedItem().toString();
 
     long date = -1;
 
@@ -200,6 +218,16 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
       cancel = true;
     }
 
+    if (TextUtils.isEmpty(mWeightView.getText())) {
+      mWeightView.setError(getString(R.string.error_field_required));
+      focusView = mWeightView;
+      cancel = true;
+    } else if (weight < 0) {
+      mWeightView.setError("Weight must be greater than 0.");
+      focusView = mWeightView;
+      cancel = true;
+    }
+
 
     if (cancel) {
       // There was an error; don't attempt login and focus the first
@@ -209,7 +237,7 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
       // Show a progress spinner, and kick off a background task to
       // perform the user login attempt.
       showProgress(true);
-      mAuthTask = new UserLoginTask(name, email, password, date);
+      mAuthTask = new UserLoginTask(name, email, password, date, sex, weight);
       mAuthTask.execute((Void) null);
     }
   }
@@ -321,12 +349,16 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
     private final String mEmail;
     private final String mPassword;
     private final long mDate;
+    private final String sex;
+    private final int weight;
 
-    UserLoginTask(String name, String email, String password, long date) {
+    UserLoginTask(String name, String email, String password, long date, String sex, int weight) {
       mName = name;
       mEmail = email;
       mPassword = password;
       mDate = date;
+      this.sex = sex;
+      this.weight = weight;
     }
 
     @Override
@@ -337,8 +369,8 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
         request.put("email", mEmail);
         request.put("password", mPassword);
         request.put("birthDate", mDate);
-        request.put("sex", "male");
-        request.put("weight", 160);
+        request.put("sex", sex);
+        request.put("weight", weight);
       } catch (JSONException e) {
         e.printStackTrace();
         return null;
@@ -359,6 +391,8 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
         } catch (JSONException e) {
           e.printStackTrace();
         }
+        mAuthTask = null;
+        showProgress(false);
       } else {
         String authID;
         try {

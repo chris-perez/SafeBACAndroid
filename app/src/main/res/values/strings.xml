@@ -2,4 +2,9 @@
     <string name="app_name">SafeBACAndroid</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="sex_array">
+        <item>male</item>
+        <item>female</item>
+    </string-array>
 </resources>

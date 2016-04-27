@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -89,8 +90,10 @@ public class APICaller {
       InputStream inputStream;
       if (responseCode >= 500) {
         inputStream = urlConnection.getErrorStream();
+      } else if (responseCode >= 300) {
+        inputStream = urlConnection.getErrorStream();
       } else {
-        inputStream = urlConnection.getInputStream();
+          inputStream = urlConnection.getInputStream();
       }
 
       // Read the input stream into a String

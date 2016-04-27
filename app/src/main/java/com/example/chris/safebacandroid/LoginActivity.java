@@ -301,6 +301,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         } catch (JSONException e) {
           e.printStackTrace();
         }
+        mAuthTask = null;
+        showProgress(false);
       } else {
         String authID;
         try {
