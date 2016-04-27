@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/greygradient"
+
+    >
+    <RelativeLayout
+        android:id="@+id/booze_banner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.25"
+
+        >
+        <ImageView
+            android:id="@+id/beer_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/beericon"
+            android:visibility="invisible"
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+
+            />
+        <ImageView
+            android:id="@+id/wine_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/wineicon"
+            android:visibility="invisible"
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            />
+        <ImageView
+            android:id="@+id/cocktail_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/cocktailicon"
+            android:visibility="invisible"
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            />
+        <ImageView
+            android:id="@+id/liquor_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/liquoricon"
+            android:visibility="invisible"
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            />
+
+        <EditText
+            android:id="@+id/filter_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/beer_banner"
+            android:hint="Filter"
+            android:ems="10"
+            android:textColorHint="@color/black00"
+            android:inputType="textFilter"
+
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/beer_banner"
+            android:layout_above="@+id/filter_input"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            >
+            <Button
+                android:id="@+id/submit_abv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="@string/update_bac"
+                android:textSize="17sp"
+                android:background="@drawable/shape01"
+
+
+                />
+            <Button
+                android:id="@+id/new_drink"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:layout_marginLeft="10dp"
+                android:text="@string/new_drink"
+                android:textSize="15sp"
+                android:background="@drawable/shape02"
+                android:typeface="monospace" />
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/list_cont"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.75"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:paddingBottom="10dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+
+                >
+                <TextView
+                    android:id="@+id/name_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/name_Ulabel"
+                    android:textSize="30sp"
+                    android:textColor="@color/black00"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/down"
+                    android:layout_alignBottom="@+id/name_label"
+                    android:layout_toRightOf="@+id/name_label"
+                    android:scaleType="fitStart"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+
+                >
+                <TextView
+                    android:id="@+id/abv_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/ABV_Ulabel"
+                    android:textSize="30sp"
+                    android:textColor="@color/black00"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/down"
+                    android:layout_alignBottom="@+id/abv_label"
+                    android:layout_toRightOf="@+id/abv_label"
+                    android:scaleType="fitStart"
+                    />
+
+
+            </RelativeLayout>
+
+
+
+
+
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white00"
+                android:alpha=".3"
+
+                />
+
+            <ListView
+                android:id="@+id/list_major"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </ListView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

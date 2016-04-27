@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/row_container"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <ImageView
+        android:id="@+id/unit_check"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.45"
+        android:src="@drawable/check"
+        android:visibility="invisible"
+        android:adjustViewBounds="true"
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/unit_name"
+        android:textSize="25sp"
+        android:text="@+id/unit_name"
+        android:layout_weight="0.25"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/unit_abv"
+        android:textSize="25sp"
+        android:text="@+id/unit_abv"
+        android:layout_weight="0.3"
+        />
+
+</LinearLayout>

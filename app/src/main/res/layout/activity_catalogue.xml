@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.steel.uitemp.drinks"
+    android:background="@drawable/greygradient"
+    >
+
+
+
+    <LinearLayout
+        android:id="@+id/touchView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:weightSum="4.0"
+
+        >
+
+
+        <RelativeLayout
+            android:id="@+id/beers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+
+            >
+
+            <ImageView
+                android:id="@+id/beer_plate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/plateback"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/beers"
+
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/arrow"
+                android:layout_alignParentRight="true"
+                android:visibility="visible"
+                />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/wines"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            >
+            <ImageView
+                android:id="@+id/wine_plate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/plateback"
+                android:visibility="invisible"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/wines"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/arrow"
+                android:layout_alignParentRight="true"
+                android:visibility="visible"
+                />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/cocktails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            >
+            <ImageView
+                android:id="@+id/cocktail_plate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/plateback"
+                android:visibility="invisible"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/cocktails"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/arrow"
+                android:layout_alignParentRight="true"
+                android:visibility="visible"
+                />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/liquors"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            >
+            <ImageView
+                android:id="@+id/liquor_plate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/plateback"
+                android:visibility="invisible"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/liquors"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/arrow"
+                android:layout_alignParentRight="true"
+                android:visibility="visible"
+                />
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/test_panel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightBlue00"
+        android:layout_below="@+id/touchView"
+        android:orientation="vertical"
+        >
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
