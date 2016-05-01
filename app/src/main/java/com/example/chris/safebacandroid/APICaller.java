@@ -42,6 +42,15 @@ public class APICaller {
 
 
   //TODO: add proper error handling
+
+  /**
+   * Makes a call to the server and returns its response as a String.
+   * @param path relative path of the http method
+   * @param method type of request (GET, PUT, POST, DELETE)
+   * @param params map of any url parameters
+   * @param object json to server
+   * @return server response as string
+   */
   private static String call(String path, String method, Map<String, String> params, JSONObject object) {
     // These two need to be declared outside the try/catch
     // so that they can be closed in the finally block.
@@ -138,6 +147,11 @@ public class APICaller {
     }
   }
 
+  /**
+   * Converts a string to a JsonObject
+   * @param result object as string
+   * @return object as JSONObject
+   */
   private static JSONObject getJsonObject(String result) {
     try {
       JSONObject content = new JSONObject(result);
@@ -149,6 +163,11 @@ public class APICaller {
     }
   }
 
+  /**
+   * Converts a string to a JSONArray
+   * @param result object as string
+   * @return object as JSONArray
+   */
   private static JSONArray getJsonArray(String result) {
     try {
       JSONArray content = new JSONArray(result);
