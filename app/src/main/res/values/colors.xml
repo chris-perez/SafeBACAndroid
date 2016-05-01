@@ -10,7 +10,20 @@
     <color name="orange02">#ffbb62</color>
     <color name="orange03">#ede0ce</color>
     <color name="grey00">#dadada</color>
+    <color name="grey01">#c7c7c7</color>
+    <color name="grey02">#acacac</color>
+    <color name="grey03">#414141</color>
+
+
     <color name="black00">#000000</color>
+    <color name="black01">#28000000</color>
+    <color name="black02">#64000000</color>
+
     <color name="white00">#ffffff</color>
+    <color name="white01">#96ffffff</color>
+    <color name="white02">#82ffffff</color>
+
     <color name="transparent">#00ffffff</color>
+
+    <color name="blueTint">#3273b1c4</color>
 </resources>

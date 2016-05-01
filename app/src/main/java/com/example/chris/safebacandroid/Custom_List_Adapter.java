@@ -38,6 +38,12 @@ public class Custom_List_Adapter extends BaseAdapter implements Filterable {
 
     }
 
+    public void set_new_data(ArrayList<drink> new_drink_data){
+
+        this.data = new_drink_data;
+
+    }
+
     @Override
     public int getCount(){
         return filtered_data.size();

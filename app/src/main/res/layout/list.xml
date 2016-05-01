@@ -21,6 +21,7 @@
         android:layout_height="match_parent"
         android:id="@+id/unit_name"
         android:textSize="25sp"
+        android:textColor="@color/grey01"
         android:text="@+id/unit_name"
         android:layout_weight="0.25"
         android:layout_marginLeft="10dp"
@@ -31,7 +32,9 @@
         android:layout_height="match_parent"
         android:id="@+id/unit_abv"
         android:textSize="25sp"
+        android:textColor="@color/grey01"
         android:text="@+id/unit_abv"
+        android:gravity="center_horizontal"
         android:layout_weight="0.3"
         />
 

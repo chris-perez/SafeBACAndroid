@@ -1,12 +1,16 @@
 package com.example.chris.safebacandroid;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
 /**
@@ -14,17 +18,18 @@ import android.widget.ImageView;
  */
 public class Catalogue_Activity extends Activity {
 
+    int current_fragment_state=0;
     ImageView current;
     int[] divisions;
     boolean dimensions_set;
+    boolean fragment_open = false;
     int curr, last;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_catalogue_temp);
-
-
+        setContentView(R.layout.activity_catalogue);
 
 
 
@@ -39,30 +44,41 @@ public class Catalogue_Activity extends Activity {
                     dimensions_set = true;
                 }
 
-                final int x, y, action = event.getAction();
-                switch (action & MotionEvent.ACTION_MASK) {
-                    case MotionEvent.ACTION_DOWN: {
-                        x = (int) event.getRawX();
-                        y = (int) event.getRawY();
-                        display_plate(x, y);
-                        break;
+
+
+                    final int x, y, action = event.getAction();
+                    switch (action & MotionEvent.ACTION_MASK) {
+                        case MotionEvent.ACTION_DOWN: {
+                            x = (int) event.getRawX();
+                            y = (int) event.getRawY();
+                            display_plate(x, y);
+                            break;
+                        }
+                        case MotionEvent.ACTION_MOVE: {
+                            x = (int) event.getRawX();
+                            y = (int) event.getRawY();
+                            display_plate(x, y);
+                            break;
+                        }
+                        case MotionEvent.ACTION_UP: {
+                            hide_plate();
+
+
+                        if (curr > 0) {
+                        }
+
+                            move();
+                            break;
+                        }
                     }
-                    case MotionEvent.ACTION_MOVE: {
-                        x = (int) event.getRawX();
-                        y = (int) event.getRawY();
-                        display_plate(x, y);
-                        break;
-                    }
-                    case MotionEvent.ACTION_UP: {
-                        hide_plate();
-                        move();
-                        break;
-                    }
-                }
+
+
                 return true;
+
             }
         });
     }
+
 
     public void set_dimensions(){
 
@@ -139,10 +155,14 @@ public class Catalogue_Activity extends Activity {
     }
 
     public void move(){
-        Intent next_activity = new Intent(this, Catalogue_Browser_Activity.class);
-        Bundle par = new Bundle();
-        par.putInt("Label", curr);
-        next_activity.putExtras(par);
-        startActivity(next_activity);
+
+        if (curr > 0) {
+            Intent next_activity = new Intent(this, Catalogue_Browser_Activity.class);
+            Bundle par = new Bundle();
+            par.putInt("Label", curr);
+            next_activity.putExtras(par);
+            startActivity(next_activity);
+        }
     }
+
 }

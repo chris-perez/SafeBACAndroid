@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.steel.uitemp.drinks"
+    tools:context="com.example.chris.safebacandroid.Catalogue_Activity"
     android:background="@drawable/greygradient"
+    android:alpha="1"
     >
-
-
-
     <LinearLayout
         android:id="@+id/touchView"
         android:layout_width="match_parent"
@@ -17,25 +15,9 @@
         android:orientation="vertical"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:weightSum="4.5"
+        android:weightSum="4"
 
         >
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
-
-            android:text="@string/catalogue_head"
-            android:textSize="30dp"
-            android:textColor="@color/black00"
-
-            />
-
-
-
-
-
         <RelativeLayout
             android:id="@+id/beers"
             android:layout_width="match_parent"
@@ -156,4 +138,14 @@
         </RelativeLayout>
 
     </LinearLayout>
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+
+    </FrameLayout>
+
 </RelativeLayout>

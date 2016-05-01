@@ -7,13 +7,19 @@
     tools:context="com.steel.uitemp.drinks"
     android:background="@drawable/greygradient"
     >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/white_tint_border"
+
+        />
 
     <LinearLayout
         android:id="@+id/touchView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginBottom="10dp"
+        android:layout_margin="5dp"
         android:weightSum="4.5"
         >
 
@@ -21,13 +27,12 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.5"
-            android:layout_marginBottom="10dp"
             >
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/orange_back"
+                android:background="@drawable/black_back_tint"
                 android:scaleType="fitXY"
 
                 />
@@ -36,9 +41,10 @@
                 android:layout_height="wrap_content"
                 android:text="@string/catalogue_head"
                 android:textSize="30sp"
+                android:typeface="serif"
                 android:textStyle="bold"
                 android:textColor="@color/black00"
-                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
                 android:layout_centerVertical="true"
                 />
         </RelativeLayout>
@@ -54,7 +60,7 @@
                 android:id="@+id/beer_plate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/blue_back"
+                android:src="@drawable/white_tint_back02"
                 android:visibility="invisible"
                 android:scaleType="fitXY"
                 />
@@ -81,6 +87,7 @@
                 android:text="Beers"
                 android:textSize="40sp"
                 android:textColor="@color/black00"
+                android:typeface="serif"
                 android:layout_toRightOf="@id/beericon"
                 android:layout_toLeftOf="@id/beerarrow"
                 android:layout_centerVertical="true"
@@ -97,7 +104,7 @@
                 android:id="@+id/wine_plate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/blue_back"
+                android:src="@drawable/white_tint_back02"
                 android:visibility="invisible"
                 android:scaleType="fitXY"
                 />
@@ -124,6 +131,7 @@
                 android:text="Wines"
                 android:textSize="40sp"
                 android:textColor="@color/black00"
+                android:typeface="serif"
                 android:layout_toRightOf="@id/wineicon"
                 android:layout_toLeftOf="@id/winearrow"
                 android:layout_centerVertical="true"
@@ -140,7 +148,7 @@
                 android:id="@+id/cocktail_plate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/blue_back"
+                android:src="@drawable/white_tint_back02"
                 android:visibility="invisible"
                 android:scaleType="fitXY"
                 />
@@ -167,6 +175,7 @@
                 android:text="Cocktails"
                 android:textSize="40sp"
                 android:textColor="@color/black00"
+                android:typeface="serif"
                 android:layout_toRightOf="@id/cocktailicon"
                 android:layout_toLeftOf="@id/cocktailarrow"
                 android:layout_centerVertical="true"
@@ -183,7 +192,8 @@
                 android:id="@+id/liquor_plate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/blue_back"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/white_tint_back02"
                 android:visibility="invisible"
                 android:scaleType="fitXY"
                 />
@@ -210,6 +220,7 @@
                 android:text="Liquors"
                 android:textSize="40sp"
                 android:textColor="@color/black00"
+                android:typeface="serif"
                 android:layout_toRightOf="@id/liquoricon"
                 android:layout_toLeftOf="@id/liquorarrow"
                 android:layout_centerVertical="true"
