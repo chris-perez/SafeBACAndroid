@@ -9,4 +9,9 @@
     <string name="catalogue_head">Drink Catalogue</string>
     <string name="filter_label">Filter</string>
     <string name="filter_hint">drink name or abv</string>
+
+    <string-array name="sex_array">
+        <item>male</item>
+        <item>female</item>
+    </string-array>
 </resources>
