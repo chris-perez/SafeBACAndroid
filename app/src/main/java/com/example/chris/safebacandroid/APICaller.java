@@ -36,6 +36,10 @@ public class APICaller {
     return getJsonObject(call(MANAGE_AUTH_PATH, PUT, null, request));
   }
 
+  public static JSONObject updateProfile(JSONObject request) {
+    return getJsonObject(call(MANAGE_PROFILE_PATH, PUT, null, request));
+  }
+
   /**public static JSONObject getProfile() {
     return getJsonObject(call(MANAGE_PROFILE_PATH, GET, null, null));
   }*/
@@ -159,5 +163,4 @@ public class APICaller {
       return null;
     }
   }
-
 }
