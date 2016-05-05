@@ -28,6 +28,8 @@
         </activity>
         <activity android:name=".DrinkLogActivity">
         </activity>
+        <activity android:name=".FriendsActivity">
+        </activity>
     </application>
 
 </manifest>
