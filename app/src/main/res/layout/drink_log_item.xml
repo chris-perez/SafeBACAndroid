@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:layout_marginLeft="10dp"
+              android:gravity="left|center">
+
+    <TextView
+        android:id="@+id/drink_volume"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="5"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text=" oz. of "/>
+
+    <TextView
+        android:id="@+id/drink_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text=" on "/>
+
+    <TextView
+        android:id="@+id/drink_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Date"/>
+
+</LinearLayout>

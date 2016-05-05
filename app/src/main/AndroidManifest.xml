@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".ProfileActivity">
         </activity>
+        <activity android:name=".DrinkLogActivity">
+        </activity>
     </application>
 
 </manifest>
