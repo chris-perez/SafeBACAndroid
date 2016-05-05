@@ -51,7 +51,7 @@ public class DrinkLogListAdapter extends ArrayAdapter<DrinkLogItem> {
     drinkItemHolder.name.setText(dItem.getName());
     drinkItemHolder.volume.setText(dItem.getVolume()+"");
 
-    SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd at h:m", Locale.US);
+    SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd 'at' h:mm a", Locale.US);
     String date = dateFormatter.format(new Date(dItem.getDate()));
     drinkItemHolder.date.setText(date);
 
