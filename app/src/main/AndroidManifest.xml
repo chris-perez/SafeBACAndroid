@@ -26,6 +26,8 @@
         <activity android:name=".SignUp">
 
         </activity>
+
+        <activity android:name=".TaxiActivity"></activity>
     </application>
 
 </manifest>
