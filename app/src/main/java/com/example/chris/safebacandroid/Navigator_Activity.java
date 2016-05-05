@@ -47,9 +47,7 @@ public class Navigator_Activity extends Activity {
                 if (dimensions_set == false) {
                     set_dimensions();
                     dimensions_set = true;
-
                 }
-
                 final int x, y, action = event.getAction();
 
                 switch (action & MotionEvent.ACTION_MASK) {
@@ -76,7 +74,6 @@ public class Navigator_Activity extends Activity {
 
                 }
 
-
                 return true;
             }
         });
@@ -91,6 +88,9 @@ public class Navigator_Activity extends Activity {
         bacTask.execute((Void)null);
     }
 
+    /**
+     * sets dimensions of wheel buttons
+     */
     public void set_dimensions(){
         final View wheel = findViewById(R.id.wheel);
         int[] location = new int[2];
@@ -119,8 +119,6 @@ public class Navigator_Activity extends Activity {
                     {(int)(wheel_x+(radius_Out*Math.cos(ang_C[i]))),(int)(wheel_y+(radius_Out*Math.sin(ang_C[i])))},
                     {(int)(wheel_x+(radius_In*Math.cos(ang_C[i]))),(int)(wheel_y+(radius_In*Math.sin(ang_C[i])))}};
 
-
-
             regions[i] = temp;
         }
 
@@ -129,6 +127,10 @@ public class Navigator_Activity extends Activity {
         regions[3][1][1]+=1;
         regions[5][5][1]-=1;
     }
+
+    /**
+     * changes activity based on selected button
+     */
     public void change_activity(){
         Intent next_activity;
         if (curr > 0){
@@ -149,10 +151,13 @@ public class Navigator_Activity extends Activity {
             }
             startActivity(next_activity);
         }
-
-
     }
 
+    /**
+     * displays selected button
+     * @param x x coordinates for checking within boundaries of button
+     * @param y y coordinates for checking within boundaries of button
+     */
     public void display_button(int x, int y){
         int[] point = {x,y};
 
@@ -210,12 +215,21 @@ public class Navigator_Activity extends Activity {
         }
     }
 
+    /**
+     * hides unselected buttons
+     */
     public void hide_buttons(){
         if(current != null){
             current.setVisibility(View.INVISIBLE);
         }
     }
 
+    /**
+     * checks if a point is within boundaries of a shape
+     * @param shape shape of button
+     * @param pnt mouse click point location
+     * @return returns true if point is inside shape
+     */
     private boolean contains(int[][] shape, int[] pnt) {
         boolean inside = false;
         int len = shape.length;
@@ -227,11 +241,21 @@ public class Navigator_Activity extends Activity {
         return inside;
     }
 
+    /**
+     * sets the BAC view in center of wheel
+     */
     private void setWheelBac(){
         WheelBac.setText(currentBac+"");
         WelcomeName.setText(currentName);
     }
 
+    /**
+     * checks if point vector ray intersects given line
+     * @param A line 1 for checking intersection
+     * @param B line 2 for checking intersection
+     * @param P point ray to compare to lines
+     * @return returns true if rays intersect
+     */
     private boolean intersects(int[] A, int[] B, int[] P) {
         if (A[1] > B[1]) {
             return intersects(B, A, P);
@@ -263,10 +287,11 @@ public class Navigator_Activity extends Activity {
         }else{
             return b;
         }
-
     }
 
-
+    /**
+     * custom task to recieve BAC and name of current user;
+     */
     private class UserBacTask extends AsyncTask<Void, Void, JSONObject>{
 
         private JSONObject profile;
@@ -289,8 +314,6 @@ public class Navigator_Activity extends Activity {
             }
             setWheelBac();
         }
-
     }
-
 }
 

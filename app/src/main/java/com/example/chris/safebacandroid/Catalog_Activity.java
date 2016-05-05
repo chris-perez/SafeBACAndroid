@@ -64,7 +64,9 @@ public class Catalog_Activity extends Activity {
         });
     }
 
-
+    /**
+     * initializes dimensions of type specifier selectors
+     */
     public void set_dimensions(){
 
         int[] location = new int[2];
@@ -89,6 +91,11 @@ public class Catalog_Activity extends Activity {
         last = curr;
     }
 
+    /**
+     * displays custom background plate for selected type specifier
+     * @param x x coordinates for checking if within boundaries
+     * @param y y coordinates for checking if withing boundaries
+     */
     public void display_plate(int x, int y){
 
         if(y > divisions[0] && y <= divisions[1]){
@@ -121,12 +128,18 @@ public class Catalog_Activity extends Activity {
         }
     }
 
+    /**
+     * hides selector background for unselected type buttons
+     */
     public void hide_plate(){
         if (current != null){
             current.setVisibility(View.INVISIBLE);
         }
     }
 
+    /**
+     * changes activity
+     */
     public void move(){
 
         if (curr > 0) {

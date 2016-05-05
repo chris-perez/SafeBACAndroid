@@ -89,7 +89,6 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
         }
     }
 
-
     @Override
     public void onClick(View v){
 
@@ -126,6 +125,11 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
         return super.onKeyDown(keyCode, event);
     }
 
+    /**
+     * shows top left icon to remind user of drink type currently being explored
+     * @param drType drink type specification
+     */
+
     public void show_label(int drType){
 
         ImageView banner = (ImageView)findViewById(R.id.beer_banner);
@@ -148,44 +152,49 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
 
     }
 
+    /**
+     * expander for custom drink fragment
+     */
     public void open_adder(){
         Fragment test = getFragmentManager().findFragmentByTag(ADDER_TAG);
         if (test != null){
             getFragmentManager().popBackStack();
-
-
-
             frag_open = false;
         }else{
             Fragment new_frag = new Catalog_Adder_Fragment();
             getFragmentManager().beginTransaction()
                     .setCustomAnimations(R.anim.slide_left,R.anim.slide_right)
                     .add(R.id.new_drink_frag_cont,new_frag,ADDER_TAG).addToBackStack(null).commit();
-
-
-
             frag_open = true;
-
         }
-
     }
 
+    /**
+     * sends selected drink to user profile on server
+     * @param id id of selected drink
+     * @param vol volume of selected drink in fl.oz
+     */
     public void submit_drink(String id, String vol){
-
         SubmitDrinkTask appender = new SubmitDrinkTask(id, vol);
         appender.execute((Void)null);
-
         finish();
-
-
     }
 
+    /**
+     * sends custom drink to user profile on server
+     * @param name name of new drink
+     * @param abv alcohol content of new drink
+     * @param type type specifier of new drink
+     * @param vol volume of new drink in fl.oz
+     */
     public void submit_custom_drink(String name, String abv, String type, String vol){
-
         SubmitDrinkTask appender = new SubmitDrinkTask(name, abv, type, vol);
         appender.execute((Void)null);
     }
 
+    /**
+     * initializes custom adapter based on desired list type
+     */
     public void buildAdapter(){
         ADAPTER = new DrinkListAdapter(this, catalog);
         LIST.setAdapter(ADAPTER);
@@ -194,6 +203,9 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
         FILT.addTextChangedListener(new CustomTextWatcher(FILT));
     }
 
+    /**
+     * initializes a text watcher for user volume input
+     */
     private class CustomTextWatcher implements TextWatcher{
 
         private EditText editText;
@@ -213,6 +225,9 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
         }
     }
 
+    /**
+     * custom task for acquiring server information to submit drink for abv
+     */
     private class SubmitDrinkTask extends AsyncTask<Void, Void, JSONObject>{
 
         private String name;
@@ -254,6 +269,9 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
         }
     }
 
+    /**
+     * custom task for acquiring server information for applying list
+     */
     private class RetrieveCatalogTask extends AsyncTask<Void, Void, JSONArray>{
 
         ArrayList<Drink> drinksReciever;
