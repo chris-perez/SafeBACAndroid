@@ -21,7 +21,18 @@ public class DrinkLogActivity extends Activity {
     setContentView(R.layout.activity_drink_history);
 
     drinkListView = (ListView) findViewById(R.id.drink_list);
-    drinkListView.setAdapter(new DrinkLogListAdapter(getBaseContext(), R.layout.drink_log_item, new ArrayList<DrinkLogItem>()));
+    drinkListView.setAdapter(new DrinkLogListAdapter(this, R.layout.drink_log_item, new ArrayList<DrinkLogItem>()));
+  }
+
+  @Override
+  protected void onStart() {
+    super.onStart();
+    new GetDrinkLogTask().execute((Void)null);
+  }
+
+  private void setAdapter(List<DrinkLogItem> drinkLogItems) {
+    drinkListView.setAdapter(new DrinkLogListAdapter(this, R.layout.drink_log_item, drinkLogItems));
+
   }
 
   public class GetDrinkLogTask extends AsyncTask<Void, Void, JSONArray> {
@@ -44,6 +55,8 @@ public class DrinkLogActivity extends Activity {
           Long time = drinkJson.getLong("time");
           drinkLogItems.add(new DrinkLogItem(id, name, type, abv, volume, time));
         }
+
+        setAdapter(drinkLogItems);
       } catch (JSONException e){
         e.printStackTrace();
       }
