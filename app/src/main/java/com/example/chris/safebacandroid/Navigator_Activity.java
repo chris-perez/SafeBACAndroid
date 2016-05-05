@@ -290,7 +290,7 @@ public class Navigator_Activity extends Activity {
     }
 
     /**
-     * custom task to recieve BAC and name of current user;
+     * custom task to recieve BAC and name of current user
      */
     private class UserBacTask extends AsyncTask<Void, Void, JSONObject>{
 
