@@ -1,38 +1,26 @@
 package com.example.chris.safebacandroid;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
 /**
  * Created by Steel on 4/25/16.
  */
-public class Catalogue_Activity extends Activity {
+public class Catalog_Activity extends Activity {
 
-    int current_fragment_state=0;
     ImageView current;
     int[] divisions;
     boolean dimensions_set;
-    boolean fragment_open = false;
     int curr, last;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_catalogue);
-
-
-
+        setContentView(R.layout.activity_catalog);
 
         final View touchView = findViewById(R.id.touchView);
         touchView.setOnTouchListener(new View.OnTouchListener() {
@@ -43,9 +31,6 @@ public class Catalogue_Activity extends Activity {
                     set_dimensions();
                     dimensions_set = true;
                 }
-
-
-
                     final int x, y, action = event.getAction();
                     switch (action & MotionEvent.ACTION_MASK) {
                         case MotionEvent.ACTION_DOWN: {
@@ -100,10 +85,6 @@ public class Catalogue_Activity extends Activity {
         plate.getLocationInWindow(location);
         divisions[3] = location[1] + plateHeight;
 
-        plate = findViewById(R.id.liquor_plate);
-        plate.getLocationInWindow(location);
-        divisions[4] = location[1] + plateHeight;
-
         curr = 0;
         last = curr;
     }
@@ -134,14 +115,6 @@ public class Catalogue_Activity extends Activity {
             current = (ImageView) findViewById(R.id.cocktail_plate);
             current.setVisibility(View.VISIBLE);
             last = curr;
-        }else if (y > divisions[3] && y <= divisions[4]){
-            curr = 4;
-            if (last != curr){
-                hide_plate();
-            }
-            current = (ImageView) findViewById(R.id.liquor_plate);
-            current.setVisibility(View.VISIBLE);
-            last = curr;
         }else{
             curr = 0;
             hide_plate();
@@ -157,12 +130,14 @@ public class Catalogue_Activity extends Activity {
     public void move(){
 
         if (curr > 0) {
-            Intent next_activity = new Intent(this, Catalogue_Browser_Activity.class);
+            Intent next_activity = new Intent(this, Catalog_Browser_Activity.class);
             Bundle par = new Bundle();
             par.putInt("Label", curr);
             next_activity.putExtras(par);
             startActivity(next_activity);
+            finish();
         }
     }
+
 
 }

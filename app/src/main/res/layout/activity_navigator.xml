@@ -2,16 +2,86 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    tools:context="com.steel.uitemp.navigator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.steel.uitemp.navigator"
+    android:orientation="vertical"
+    android:weightSum="6"
+    android:background="#fff6f6f6"
     >
-    <ImageView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/greygradient"
-        android:scaleType="fitXY"/>
+        android:weightSum="3"
+        >
+        <RelativeLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.2"
+            android:layout_gravity="start"
+            >
+
+            <ImageView
+                android:id="@+id/martin_i"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/martini"
+                android:adjustViewBounds="true"
+                />
+
+            <TextView
+                android:id="@+id/title_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/title_name"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/hi"
+                android:textSize="30sp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                />
+
+            <TextView
+                android:id="@+id/title_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/martin_i"
+                android:layout_centerVertical="true"
+                android:text=""
+                android:textSize="30sp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/title_name"
+                android:layout_centerVertical="true"
+                android:text="@string/ex"
+                android:textSize="40sp"
+                android:paddingLeft="3dp"
+                android:paddingBottom="20dp"
+
+                />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+
+    >
 
     <RelativeLayout
         android:id="@+id/touchView"
@@ -85,5 +155,24 @@
             android:visibility="invisible"
             />
 
+
     </RelativeLayout>
+    <TextView
+        android:id="@+id/wheelBac"
+        android:text="BAC"
+        android:textSize="40sp"
+        android:textColor="@color/orange04"
+        android:shadowColor="@color/grey03"
+        android:background="@color/transparent"
+        android:shadowRadius="10"
+        android:shadowDy="5"
+        android:shadowDx="3"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        />
+
+</RelativeLayout>
 </RelativeLayout>

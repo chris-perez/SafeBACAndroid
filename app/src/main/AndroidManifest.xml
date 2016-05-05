@@ -33,7 +33,7 @@
             android:name=".Calculator_Activity">
         </activity>
         <activity
-            android:name=".Catalogue_Activity">
+            android:name=".Catalog_Activity">
         </activity>
         <activity
             android:name=".Profile_Activity">
@@ -45,13 +45,10 @@
             android:name=".Transportation_Activity">
         </activity>
         <activity
-            android:name=".Catalogue_Browser_Activity">
+            android:name=".Catalog_Browser_Activity">
         </activity>
         <activity
             android:name=".Contacts_Activity">
-        </activity>
-        <activity
-            android:name=".Add_Drink_Activity">
         </activity>
 
 

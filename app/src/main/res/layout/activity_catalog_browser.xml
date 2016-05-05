@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout
+    android:id="@+id/mainBrowserLayout"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/greygradient"
-        android:alpha="0.7"
-        />
+
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,7 +15,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:background="#fff6f6f6"
 
         >
         <RelativeLayout
@@ -83,6 +80,8 @@
                     android:layout_weight="4"
                     android:orientation="horizontal"
                     android:weightSum="3"
+                    android:background="@color/white00"
+                    android:padding="5dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
@@ -92,24 +91,43 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
-                        android:background="@drawable/shape01v2"
+                        android:background="@drawable/shape01"
                         android:layout_marginRight="3dp"
                         android:text="@string/update_bac"
-                        android:typeface="serif"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         />
-                    <Button
-                        android:id="@+id/new_drink"
+                    <LinearLayout
+                        android:orientation="vertical"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/shape02v2"
-                        android:text="@string/new_drink"
-                        android:typeface="serif"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        />
+                        android:weightSum="3"
+                        >
+                        <TextView
+                            android:id="@+id/qty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:text="@string/volume"
+                            android:textSize="15sp"
+                            android:textColor="@color/black00"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight=".8"
+                            />
+                        <EditText
+                            android:id="@+id/qtyInput"
+                            android:hint="@string/oz"
+                            android:textSize="30sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:gravity="center_horizontal"
+                            android:layout_weight="2.2"
+
+                            />
+
+                    </LinearLayout>
+
+
                 </LinearLayout>
                 <RelativeLayout
                     android:id="@+id/filter_ui_container"
@@ -125,7 +143,6 @@
                         android:text="@string/filter_label"
                         android:textSize="18sp"
                         android:textColor="@color/black00"
-                        android:typeface="serif"
                         android:textStyle="bold"
                         android:gravity="center"
                         android:layout_marginRight="10dp"
@@ -136,7 +153,6 @@
                         android:layout_height="match_parent"
                         android:hint="@string/filter_hint"
                         android:textSize="15sp"
-                        android:typeface="serif"
                         android:gravity="center"
                         android:background="@drawable/filter_back"
                         android:layout_centerVertical="true"
@@ -153,14 +169,15 @@
             android:layout_height="0dp"
             android:layout_weight="0.75"
             android:orientation="vertical"
+            android:weightSum="10"
             >
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:orientation="horizontal"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="20dp"
-                android:paddingBottom="10dp"
+                android:layout_weight=".7"
                 >
 
                 <RelativeLayout
@@ -175,11 +192,11 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:text="@string/name_Ulabel"
-                        android:textSize="30sp"
+                        android:textSize="20sp"
                         android:textColor="@color/black00"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:typeface="serif" />
+                        />
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -203,11 +220,11 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:text="@string/ABV_Ulabel"
-                        android:textSize="30sp"
+                        android:textSize="20sp"
                         android:textColor="@color/black00"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:typeface="serif" />
+                        />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -227,69 +244,73 @@
 
 
             </LinearLayout>
+
             <RelativeLayout
+                android:id="@+id/ListViewContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_weight="8.3"
 
                 >
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/white00"
-                    android:alpha="0.6"
-
+                    android:alpha="0.9"
                     />
 
                 <ListView
                     android:id="@+id/list_major"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+
+                    >
 
                 </ListView>
 
+
             </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="4"
+                android:gravity="center_horizontal"
+                >
+
+                <Button
+                    android:id="@+id/new_drink"
+                    android:text="@string/custom_drink"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shape04"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    />
+
+            </LinearLayout>
+
+
+
+
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="4"
-        >
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".8"
-            >
 
-
-        </RelativeLayout>
         <FrameLayout
             android:id="@+id/new_drink_frag_cont"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2.4"
+            android:layout_height="match_parent"
             >
 
 
         </FrameLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".8"
-            >
 
-
-        </RelativeLayout>
-
-
-    </LinearLayout>
 
 
 </RelativeLayout>

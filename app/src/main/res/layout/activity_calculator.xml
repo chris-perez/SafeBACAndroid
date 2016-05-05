@@ -10,7 +10,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.steel.uitemp.calculator">
     <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="Calculator"
+        android:text="COMING SOON!"
         />
 
 </RelativeLayout>

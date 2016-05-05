@@ -2,10 +2,15 @@ package com.example.chris.safebacandroid;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 /**
@@ -13,11 +18,15 @@ import android.widget.ImageView;
  */
 public class Navigator_Activity extends Activity {
 
-    ImageView current;
-    int curr;
-    int last;
-    boolean dimensions_set = false;
-    int[][][] regions;
+    private ImageView current;
+    private double currentBac;
+    private String currentName;
+    private TextView WheelBac;
+    private TextView WelcomeName;
+    private int curr;
+    private int last;
+    private boolean dimensions_set = false;
+    private int[][][] regions;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -25,7 +34,11 @@ public class Navigator_Activity extends Activity {
         setContentView(R.layout.activity_navigator);
         final View touchView = findViewById(R.id.touchView);
 
+        WheelBac = (TextView)findViewById(R.id.wheelBac);
+        WelcomeName = (TextView)findViewById(R.id.title_name);
 
+        UserBacTask bacTask = new UserBacTask();
+        bacTask.execute((Void)null);
 
         touchView.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -63,10 +76,21 @@ public class Navigator_Activity extends Activity {
 
                 }
 
+
                 return true;
             }
         });
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        UserBacTask bacTask = new UserBacTask();
+
+        bacTask.execute((Void)null);
+    }
+
     public void set_dimensions(){
         final View wheel = findViewById(R.id.wheel);
         int[] location = new int[2];
@@ -113,7 +137,7 @@ public class Navigator_Activity extends Activity {
             }else if (curr == 2){
                 next_activity = new Intent(this, Calculator_Activity.class);
             }else if (curr == 3){
-                next_activity = new Intent(this, Catalogue_Activity.class);
+                next_activity = new Intent(this, Catalog_Activity.class);
             }else if (curr == 4){
                 next_activity = new Intent(this, Messenger_Activity.class);
             }else if (curr == 5){
@@ -192,7 +216,7 @@ public class Navigator_Activity extends Activity {
         }
     }
 
-    boolean contains(int[][] shape, int[] pnt) {
+    private boolean contains(int[][] shape, int[] pnt) {
         boolean inside = false;
         int len = shape.length;
         for (int i = 0; i < len; i++) {
@@ -203,7 +227,12 @@ public class Navigator_Activity extends Activity {
         return inside;
     }
 
-    boolean intersects(int[] A, int[] B, int[] P) {
+    private void setWheelBac(){
+        WheelBac.setText(currentBac+"");
+        WelcomeName.setText(currentName);
+    }
+
+    private boolean intersects(int[] A, int[] B, int[] P) {
         if (A[1] > B[1]) {
             return intersects(B, A, P);
         }
@@ -221,21 +250,47 @@ public class Navigator_Activity extends Activity {
         return red >= blue;
     }
 
-    int max(int a, int b){
+    private int max(int a, int b){
         if (a>b){
             return a;
         }else{
             return b;
         }
     }
-    int min(int a, int b){
+    private int min(int a, int b){
         if(a<b){
             return a;
         }else{
             return b;
         }
+
     }
 
+
+    private class UserBacTask extends AsyncTask<Void, Void, JSONObject>{
+
+        private JSONObject profile;
+
+        @Override
+        protected JSONObject doInBackground(Void... params){
+            profile = APICaller.getProfile();
+            return profile;
+        }
+
+        @Override
+        protected void onPostExecute(JSONObject result){
+
+            try {
+                currentBac = result.getDouble("bac");
+                currentName = result.getString("name");
+            }catch (JSONException e) {
+                e.printStackTrace();
+                return;
+            }
+            setWheelBac();
+        }
+
+    }
 
 }
 

@@ -5,16 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
-    <ImageView
-        android:id="@+id/unit_check"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.45"
-        android:src="@drawable/check"
-        android:visibility="invisible"
-        android:adjustViewBounds="true"
-        android:layout_margin="5dp"
-        />
 
     <TextView
         android:layout_width="match_parent"
@@ -36,6 +26,15 @@
         android:text="@+id/unit_abv"
         android:gravity="center_horizontal"
         android:layout_weight="0.3"
+        />
+
+    <TextView
+        android:id="@+id/unit_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@+id/unit_id"
+        android:visibility="gone"
+        android:layout_weight="0"
         />
 
 </LinearLayout>

@@ -25,6 +25,7 @@ public class APICaller {
   public static String authID = "";
   static final String MANAGE_AUTH_PATH = "/user/auth";
   static final String MANAGE_PROFILE_PATH = "/user/profile";
+  static final String MANAGE_DRINKS_PATH = "/drinks";
 
   static final String GET = "GET", PUT = "PUT", POST = "POST", DELETE = "DELETE";
 
@@ -36,10 +37,21 @@ public class APICaller {
     return getJsonObject(call(MANAGE_AUTH_PATH, PUT, null, request));
   }
 
-  /**public static JSONObject getProfile() {
+  public static JSONObject getProfile() {
     return getJsonObject(call(MANAGE_PROFILE_PATH, GET, null, null));
-  }*/
+  }
 
+  public static JSONArray openCatalog(){
+    return getJsonArray(call(MANAGE_DRINKS_PATH, GET, null, null));
+  }
+
+  public static JSONObject submitDrink(JSONObject request) {
+    return getJsonObject(call(MANAGE_DRINKS_PATH, PUT, null, request));
+  }
+
+  public static String getCall(){
+    return call("/drinks","GET",null, null);
+  }
 
   //TODO: add proper error handling
 
@@ -168,8 +180,10 @@ public class APICaller {
    * @param result object as string
    * @return object as JSONArray
    */
+
   private static JSONArray getJsonArray(String result) {
     try {
+
       JSONArray content = new JSONArray(result);
       Log.i("APICaller Response", content.toString());
       return content;
@@ -178,5 +192,6 @@ public class APICaller {
       return null;
     }
   }
+
 
 }

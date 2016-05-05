@@ -36,8 +36,10 @@ public class MainActivity extends Activity {
     });
     
     //TODO: Remove before merge
-    Intent navigator = new Intent(this, Catalogue_Activity.class);
+    /*
+    Intent navigator = new Intent(this, Navigator_Activity.class);
     startActivity(navigator);
+    */
   }
 
 

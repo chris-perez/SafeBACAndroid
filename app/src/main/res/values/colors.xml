@@ -5,10 +5,15 @@
     <color name="lightBlue00">#5cbad9</color>
     <color name="lightBlue01">#abd0dc</color>
     <color name="lightBlue02">#d6e0e4</color>
+    <color name="blueGrey00">#f0f8fa</color>
+    <color name="blueGrey01">#dae1e6</color>
+
     <color name="orange00">#fda745</color>
     <color name="orange01">#ffc880</color>
     <color name="orange02">#ffbb62</color>
     <color name="orange03">#ede0ce</color>
+    <color name="orange04">#ff9824</color>
+
     <color name="grey00">#dadada</color>
     <color name="grey01">#c7c7c7</color>
     <color name="grey02">#acacac</color>
@@ -21,7 +26,7 @@
 
     <color name="white00">#ffffff</color>
     <color name="white01">#96ffffff</color>
-    <color name="white02">#82ffffff</color>
+    <color name="white02">#3cffffff</color>
 
     <color name="transparent">#00ffffff</color>
 
