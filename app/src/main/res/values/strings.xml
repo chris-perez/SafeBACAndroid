@@ -2,6 +2,19 @@
     <string name="app_name">SafeBACAndroid</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="name_Ulabel"><u>NAME</u></string>
+    <string name="ABV_Ulabel"><u>ABV</u></string>
+    <string name="new_drink">New Drink</string>
+    <string name="update_bac">Update BAC</string>
+    <string name="catalogue_head">Drink Catalog</string>
+    <string name="filter_label">Filter</string>
+    <string name="filter_hint">drink name or abv</string>
+    <string name="hi">HI</string>
+    <string name="ex">!</string>
+    <string name="volume">VOLUME</string>
+    <string name="oz">OZ</string>
+    <string name="custom_drink">CUSTOM DRINK</string>
+    <string name="other">OTHER</string>
 
     <string-array name="sex_array">
         <item>male</item>

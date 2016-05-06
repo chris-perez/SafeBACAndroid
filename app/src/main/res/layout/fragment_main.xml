@@ -9,27 +9,35 @@
                 tools:context=".MainActivityFragment">
 
     <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:text="BACSafe"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:textSize="52sp"
+        android:gravity="center"/>
 
     <RelativeLayout
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true">
 
         <Button
             android:id="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
             android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:background="@color/accent"
+            android:textColor="@android:color/white"
             android:text="Login"/>
         <Button
             android:id="@+id/signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/accent"
+            android:textColor="@android:color/white"
             android:text="Signup"/>
 
     </RelativeLayout>
