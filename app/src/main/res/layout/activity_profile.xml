@@ -83,10 +83,10 @@
         <Button
             android:id="@+id/button_update"
             android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="33.5dp"
-            android:background="#fffc5d53"
+            android:background="@color/accent"
             android:text="Update Info"
             android:textColor="#ffffffff"
             />

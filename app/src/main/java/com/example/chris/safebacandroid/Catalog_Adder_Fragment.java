@@ -13,7 +13,7 @@ import android.widget.EditText;
 /**
  * Created by Steel on 5/1/16.
  */
-public class Catalog_Adder_Fragment extends Fragment implements View.OnClickListener{
+/*public class Catalog_Adder_Fragment extends Fragment implements View.OnClickListener{
 
 
     private View view;
@@ -118,4 +118,6 @@ public class Catalog_Adder_Fragment extends Fragment implements View.OnClickList
         }
 
     }
+
 }
+*/

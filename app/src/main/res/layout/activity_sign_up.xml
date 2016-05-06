@@ -105,7 +105,7 @@
             android:layout_height="28.5dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="33.5dp"
-            android:background="#fffc5d53"
+            android:background="@color/accent"
             android:text="Sign up"
             android:textColor="#ffffffff"
             />

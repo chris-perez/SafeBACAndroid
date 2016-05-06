@@ -161,11 +161,11 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
             getFragmentManager().popBackStack();
             frag_open = false;
         }else{
-            Fragment new_frag = new Catalog_Adder_Fragment();
+            /*Fragment new_frag = new Catalog_Adder_Fragment();
             getFragmentManager().beginTransaction()
                     .setCustomAnimations(R.anim.slide_left,R.anim.slide_right)
                     .add(R.id.new_drink_frag_cont,new_frag,ADDER_TAG).addToBackStack(null).commit();
-            frag_open = true;
+            frag_open = true;*/
         }
     }
 

@@ -142,8 +142,7 @@ public class Navigator_Activity extends Activity {
       } else if (curr == 3) {
         next_activity = new Intent(this, Catalog_Activity.class);
       } else if (curr == 4) {
-//                next_activity = new Intent(this, Messenger_Activity.class);
-        return;
+        next_activity = new Intent(this, DrinkLogActivity.class);
       } else if (curr == 5) {
         next_activity = new Intent(this, FriendsActivity.class);
       } else if (curr == 6) {

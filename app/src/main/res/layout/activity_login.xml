@@ -49,24 +49,15 @@
         <Button
             android:id="@+id/email_sign_in_button"
             style="?android:textAppearanceSmall"
-            android:layout_width="67dp"
+            android:layout_width="100dp"
 
-            android:layout_height="28.5dp"
+            android:layout_height="40dp"
             android:layout_marginTop="25dp"
             android:text="@string/action_sign_in"
             android:textStyle="bold"
             android:textColor="#ffffffff"
-            android:background="#fffc5d53"
+            android:background="@color/accent"
             android:layout_gravity="center"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7.5dp"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Forgot your password?"
-            android:id="@+id/textView4"
-            android:layout_gravity="center_horizontal"/>
 
 
     </LinearLayout>
