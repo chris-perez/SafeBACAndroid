@@ -31,4 +31,6 @@
     <color name="transparent">#00ffffff</color>
 
     <color name="blueTint">#3273b1c4</color>
+    <color name="accent">#FC5D53</color>
+    <color name="background">#d6d6d6</color>
 </resources>
