@@ -45,9 +45,9 @@ public class APICaller {
     return getJsonArray(call(DRINK_HISTORY_PATH, GET, null, null));
   }
 
-  /**public static JSONObject getProfile() {
+  public static JSONObject getProfile() {
     return getJsonObject(call(MANAGE_PROFILE_PATH, GET, null, null));
-  }*/
+  }
 
 
   //TODO: add proper error handling

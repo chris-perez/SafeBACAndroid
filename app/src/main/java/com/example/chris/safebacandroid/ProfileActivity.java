@@ -24,6 +24,7 @@ import org.json.JSONObject;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class ProfileActivity extends Activity {
@@ -38,6 +39,8 @@ public class ProfileActivity extends Activity {
   private SimpleDateFormat dateFormatter;
 
   private Button mUpdateButton;
+
+  ArrayAdapter<CharSequence> adapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +59,7 @@ public class ProfileActivity extends Activity {
     mWeightView = (EditText) findViewById(R.id.weight);
     mSexSpinner = (Spinner) findViewById(R.id.sex);
 
-    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sex_array,
+    adapter = ArrayAdapter.createFromResource(this, R.array.sex_array,
         android.R.layout.simple_spinner_item);
     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     mSexSpinner.setAdapter(adapter);
@@ -68,6 +71,8 @@ public class ProfileActivity extends Activity {
         updateProfile();
       }
     });
+
+    new GetProfileTask().execute((Void) null);
   }
 
   private void updateProfile() {
@@ -157,6 +162,36 @@ public class ProfileActivity extends Activity {
       }
 
     }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+  }
+
+  public class GetProfileTask extends AsyncTask<Void, Void, JSONObject> {
+    @Override
+    protected JSONObject doInBackground(Void... params) {
+      return APICaller.getProfile();
+    }
+
+    @Override
+    protected void onPostExecute(JSONObject jsonObject) {
+      if (jsonObject == null) {
+        return;
+      }
+      try {
+        String name = jsonObject.getString("name");
+        String email = jsonObject.getString("email");
+        String sex = jsonObject.getString("sex");
+        int weight = jsonObject.getInt("weight");
+        Long birthDate = jsonObject.getLong("birthDate");
+
+        mNameView.setText(name);
+        mEmailView.setText(email);
+        mBirthdateView.setText(dateFormatter.format(new Date(birthDate)));
+        mWeightView.setText(weight+"");
+        int spinnerPosition = adapter.getPosition(sex);
+        mSexSpinner.setSelection(spinnerPosition);
+      }catch (JSONException e) {
+        e.printStackTrace();
+      }
+    }
   }
 
   public class UpdateProfileTask extends AsyncTask<Void, Void, JSONObject> {
