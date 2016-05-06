@@ -137,13 +137,13 @@ public class Navigator_Activity extends Activity {
             if (curr == 1){
                 next_activity = new Intent(this, Profile_Activity.class);
             }else if (curr == 2){
-                next_activity = new Intent(this, Calculator_Activity.class);
+//                next_activity = new Intent(this, Calculator_Activity.class);
             }else if (curr == 3){
                 next_activity = new Intent(this, Catalog_Activity.class);
             }else if (curr == 4){
-                next_activity = new Intent(this, Messenger_Activity.class);
+//                next_activity = new Intent(this, Messenger_Activity.class);
             }else if (curr == 5){
-                next_activity = new Intent(this, Contacts_Activity.class);
+                next_activity = new Intent(this, FriendsActivity.class);
             }else if (curr == 6){
                 next_activity = new Intent(this, Transportation_Activity.class);
             }else{
