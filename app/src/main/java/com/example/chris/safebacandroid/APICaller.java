@@ -2,6 +2,7 @@ package com.example.chris.safebacandroid;
 
 import android.net.Uri;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,6 +15,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -25,6 +27,8 @@ public class APICaller {
   public static String authID = "";
   static final String MANAGE_AUTH_PATH = "/user/auth";
   static final String MANAGE_PROFILE_PATH = "/user/profile";
+  static final String DRINK_HISTORY_PATH = "/drinks/history";
+  static final String FRIENDS_PATH = "/user/friends";
 
   static final String GET = "GET", PUT = "PUT", POST = "POST", DELETE = "DELETE";
 
@@ -36,9 +40,34 @@ public class APICaller {
     return getJsonObject(call(MANAGE_AUTH_PATH, PUT, null, request));
   }
 
-  /**public static JSONObject getProfile() {
+  public static JSONObject updateProfile(JSONObject request) {
+    return getJsonObject(call(MANAGE_PROFILE_PATH, PUT, null, request));
+  }
+
+  public static JSONArray getDrinkLog() {
+    return getJsonArray(call(DRINK_HISTORY_PATH, GET, null, null));
+  }
+
+  public static JSONArray getFriends() {
+    return getJsonArray(call(FRIENDS_PATH, GET, null, null));
+  }
+
+  public static JSONArray addFriend(String email) {
+    Map<String, String> params = new HashMap<>();
+    params.put("email", email);
+    return getJsonArray(call(FRIENDS_PATH, PUT, params, new JSONObject()));
+  }
+
+  public static void setVisibility(Long id, Boolean visible) {
+    Map<String, String> params = new HashMap<>();
+    params.put("id", id+"");
+    params.put("visible", visible+"");
+    call(FRIENDS_PATH, POST, params, new JSONObject());
+  }
+
+  public static JSONObject getProfile() {
     return getJsonObject(call(MANAGE_PROFILE_PATH, GET, null, null));
-  }*/
+  }
 
 
   //TODO: add proper error handling
@@ -155,9 +184,13 @@ public class APICaller {
       Log.i("APICaller Response", content.toString());
       return content;
     } catch (JSONException e) {
+      try {
+        JSONObject content = new JSONObject(result);
+        String message = content.getString("error");
+        Log.e("APICaller", message);
+      } catch (JSONException e2){}
       e.printStackTrace();
       return null;
     }
   }
-
 }

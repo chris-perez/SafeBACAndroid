@@ -1,28 +1,18 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#fff6f6f6"
-              android:gravity="center"
-              android:orientation="vertical"
-              tools:context="com.example.chris.safebacandroid.SignUp">
-
-    <!-- Login progress -->
-    <ProgressBar
-        android:id="@+id/login_progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"/>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context="com.example.chris.safebacandroid.ProfileActivity">
 
     <LinearLayout
         android:id="@+id/email_signup_form"
         android:layout_width="227.5dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical"
-        android:background="#fff6f6f6">
-
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/name"
@@ -41,15 +31,6 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"/>
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="16.5dp"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"/>
 
         <EditText
             android:id="@+id/birthdate"
@@ -100,25 +81,15 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button_signup_form"
-            android:layout_width="67dp"
-            android:layout_height="28.5dp"
+            android:id="@+id/button_update"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="33.5dp"
             android:background="#fffc5d53"
-            android:text="Sign up"
+            android:text="Update Info"
             android:textColor="#ffffffff"
             />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Failed to connect to server."
-        android:id="@+id/error_message"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#ffff0000"
-        android:visibility="invisible"/>
 </LinearLayout>

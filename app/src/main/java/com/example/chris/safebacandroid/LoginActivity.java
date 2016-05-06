@@ -320,7 +320,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         Toast toast = Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_SHORT);
         toast.show();
-        Intent intentMain = new Intent(getBaseContext(), TaxiActivity.class);
+        Intent intentMain = new Intent(getBaseContext(), FriendsActivity.class);
         startActivity(intentMain);
         finish();
       }
