@@ -25,6 +25,7 @@ public class APICaller {
   public static String authID = "";
   static final String MANAGE_AUTH_PATH = "/user/auth";
   static final String MANAGE_PROFILE_PATH = "/user/profile";
+  static final String DRINK_HISTORY_PATH = "/drinks/history";
 
   static final String GET = "GET", PUT = "PUT", POST = "POST", DELETE = "DELETE";
 
@@ -38,6 +39,10 @@ public class APICaller {
 
   public static JSONObject updateProfile(JSONObject request) {
     return getJsonObject(call(MANAGE_PROFILE_PATH, PUT, null, request));
+  }
+
+  public static JSONArray getDrinkLog() {
+    return getJsonArray(call(DRINK_HISTORY_PATH, GET, null, null));
   }
 
   public static JSONObject getProfile() {
