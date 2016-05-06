@@ -65,10 +65,9 @@ public class APICaller {
     call(FRIENDS_PATH, POST, params, new JSONObject());
   }
 
-
-  /**public static JSONObject getProfile() {
+  public static JSONObject getProfile() {
     return getJsonObject(call(MANAGE_PROFILE_PATH, GET, null, null));
-  }*/
+  }
 
 
   //TODO: add proper error handling
