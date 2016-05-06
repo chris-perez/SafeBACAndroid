@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.steel.uitemp.drinks"
+    android:background="#fff6f6f6"
+    >
+
+    <LinearLayout
+        android:id="@+id/touchView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:weightSum="4.5"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".5"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/black_back_tint"
+                android:scaleType="fitXY"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/catalogue_head"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/black00"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/beers"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            >
+            <ImageView
+                android:id="@+id/beer_plate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/white_tint_back02"
+                android:visibility="invisible"
+                android:scaleType="fitXY"
+                />
+            <ImageView
+                android:id="@+id/beericon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/beericon"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                />
+
+            <ImageView
+                android:id="@+id/beerarrow"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/arrow"
+                android:layout_alignParentRight="true"
+                android:visibility="visible"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beers"
+                android:textSize="40sp"
+                android:textColor="@color/black00"
+                android:layout_toRightOf="@id/beericon"
+                android:layout_toLeftOf="@id/beerarrow"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/wines"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            >
+            <ImageView
+                android:id="@+id/wine_plate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/white_tint_back02"
+                android:visibility="invisible"
+                android:scaleType="fitXY"
+                />
+            <ImageView
+                android:id="@+id/wineicon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/wineicon"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                />
+
+            <ImageView
+                android:id="@+id/winearrow"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/arrow"
+                android:layout_alignParentRight="true"
+                android:visibility="visible"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wines"
+                android:textSize="40sp"
+                android:textColor="@color/black00"
+                android:layout_toRightOf="@id/wineicon"
+                android:layout_toLeftOf="@id/winearrow"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/cocktails"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            >
+            <ImageView
+                android:id="@+id/cocktail_plate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/white_tint_back02"
+                android:visibility="invisible"
+                android:scaleType="fitXY"
+                />
+            <ImageView
+                android:id="@+id/cocktailicon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/cocktailicon"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                />
+
+            <ImageView
+                android:id="@+id/cocktailarrow"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/arrow"
+                android:layout_alignParentRight="true"
+                android:visibility="visible"
+                />
+            <TextView
+                android:id="@+id/otherText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other"
+                android:textSize="40sp"
+                android:textColor="@color/black00"
+                android:layout_toRightOf="@id/cocktailicon"
+                android:layout_centerVertical="true"
+                />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/black_back_tint"
+            >
+
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,17 +1,45 @@
 package com.example.chris.safebacandroid;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends Activity {
+  Button loginButton;
+  Button signupButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    loginButton = (Button) findViewById(R.id.login);
+    signupButton = (Button) findViewById(R.id.signup);
+
+    loginButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        startActivity(new Intent(getBaseContext(), LoginActivity.class));
+      }
+    });
+
+    signupButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        startActivity(new Intent(getBaseContext(), SignUp.class));
+      }
+    });
+    
+    //TODO: Remove before merge
+    /*
+    Intent navigator = new Intent(this, Navigator_Activity.class);
+    startActivity(navigator);
+    */
   }
 
 
@@ -30,7 +58,7 @@ public class MainActivity extends Activity {
     int id = item.getItemId();
 
     //noinspection SimplifiableIfStatement
-    if (id == R.id.action_settings) {
+    if (id == R.id.action_show_list) {
       return true;
     }
 

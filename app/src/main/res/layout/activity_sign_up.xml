@@ -1,0 +1,124 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#fff6f6f6"
+              android:gravity="center"
+              android:orientation="vertical"
+              tools:context="com.example.chris.safebacandroid.SignUp">
+
+    <!-- Login progress -->
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/email_signup_form"
+        android:layout_width="227.5dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#fff6f6f6">
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="49dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16.5dp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16.5dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/birthdate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16.5dp"
+            android:inputType="date"
+            android:ems="10"
+            android:layout_gravity="center_horizontal"
+            android:hint="Birth Date"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16.5dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Sex: "/>
+            <Spinner
+                android:id="@+id/sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16.5dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/weight"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Weight"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="lbs"
+                android:layout_weight="6"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_signup_form"
+            android:layout_width="67dp"
+            android:layout_height="28.5dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="33.5dp"
+            android:background="@color/accent"
+            android:text="Sign up"
+            android:textColor="#ffffffff"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Failed to connect to server."
+        android:id="@+id/error_message"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffff0000"
+        android:visibility="invisible"/>
+</LinearLayout>
