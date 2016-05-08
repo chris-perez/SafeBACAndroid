@@ -34,7 +34,7 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
     private EditText VOL;
     private DrinkListAdapter ADAPTER;
     private View currentSelection;
-    private ArrayList<Drink1> catalog;
+    private ArrayList<Drink> catalog;
 
     private Button ADD_BUTTON;
     private Button UPDATE_BUTTON;
@@ -273,7 +273,7 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
      */
     private class RetrieveCatalogTask extends AsyncTask<Void, Void, JSONArray>{
 
-        ArrayList<Drink1> drinksReciever;
+        ArrayList<Drink> drinksReciever;
 
         @Override
         protected JSONArray doInBackground(Void... params){
@@ -293,7 +293,7 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
                     double abvTemp = jOb.getDouble("abv");
                     String typeTemp = jOb.getString("type");
                     if (typeTemp.equals(DRINK_TYPE)) {
-                        drinksReciever.add(new Drink1(idTemp, nameTemp, abvTemp, typeTemp));
+                        drinksReciever.add(new Drink(idTemp, nameTemp, abvTemp, typeTemp));
                     }
                 }
             }catch (JSONException e){

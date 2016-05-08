@@ -20,15 +20,15 @@ public class DrinkListAdapter extends BaseAdapter implements Filterable{
 
     private LayoutInflater inflater;
     private ItemFilter filter;
-    private ArrayList<Drink1> completeData;
-    private ArrayList<Drink1> filteredData;
+    private ArrayList<Drink> completeData;
+    private ArrayList<Drink> filteredData;
 
     /**
      * Adapter constructor
      * @param context activity containing list
      * @param data array of drinks to be applied to list
      */
-    public DrinkListAdapter(Context context, ArrayList<Drink1> data){
+    public DrinkListAdapter(Context context, ArrayList<Drink> data){
 
         inflater = LayoutInflater.from(context);
         filter = new ItemFilter();
@@ -55,7 +55,7 @@ public class DrinkListAdapter extends BaseAdapter implements Filterable{
         }
     }
     @Override
-    public Drink1 getItem(int position){
+    public Drink getItem(int position){
         if (filteredData == null || position >= filteredData.size()){
             return null;
         }else{
@@ -64,7 +64,7 @@ public class DrinkListAdapter extends BaseAdapter implements Filterable{
     }
     @Override
     public long getItemId(int position){
-        Drink1 temp = getItem(position);
+        Drink temp = getItem(position);
         if (temp != null) {
             return temp.getId();
         }else{
@@ -109,10 +109,10 @@ public class DrinkListAdapter extends BaseAdapter implements Filterable{
             String filterString = constraint.toString().toLowerCase();
             FilterResults results = new FilterResults();
 
-            ArrayList<Drink1> temp_list = completeData;
+            ArrayList<Drink> temp_list = completeData;
             int count = temp_list.size();
 
-            ArrayList<Drink1> nlist = new ArrayList<>(count);
+            ArrayList<Drink> nlist = new ArrayList<>(count);
             String filterable;
 
             for (int i = 0; i < count; i++){
@@ -129,7 +129,7 @@ public class DrinkListAdapter extends BaseAdapter implements Filterable{
         @SuppressWarnings("unchecked")
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results){
-            filteredData = (ArrayList<Drink1>)results.values;
+            filteredData = (ArrayList<Drink>)results.values;
             notifyDataSetChanged();
         }
     }
