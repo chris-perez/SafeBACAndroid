@@ -31,30 +31,14 @@
         <activity android:name=".FriendsActivity">
         </activity>
         <activity
-            android:name=".Navigator_Activity">
+            android:name=".NavigatorActivity">
         </activity>
         <activity
-            android:name=".Calculator_Activity">
+            android:name=".CatalogActivity">
         </activity>
         <activity
-            android:name=".Catalog_Activity">
+            android:name=".CatalogBrowserActivity">
         </activity>
-        <activity
-            android:name=".Profile_Activity">
-        </activity>
-        <activity
-            android:name=".Messenger_Activity">
-        </activity>
-        <activity
-            android:name=".Transportation_Activity">
-        </activity>
-        <activity
-            android:name=".Catalog_Browser_Activity">
-        </activity>
-        <activity
-            android:name=".Contacts_Activity">
-        </activity>
-
 
 
         <activity android:name=".TaxiActivity"></activity>

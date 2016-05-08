@@ -33,32 +33,65 @@ public class APICaller {
 
   static final String GET = "GET", PUT = "PUT", POST = "POST", DELETE = "DELETE";
 
+  /**
+   * Calls the Create Account method on the server.
+   * @param request account info as json
+   * @return user info as json, including authID
+   */
   public static JSONObject createAccount(JSONObject request) {
     return getJsonObject(call(MANAGE_AUTH_PATH, POST, null, request));
   }
 
+  /**
+   * Calls the Login method on the server.
+   * @param request login info as json
+   * @return user info as json, including authID
+   */
   public static JSONObject login(JSONObject request) {
     return getJsonObject(call(MANAGE_AUTH_PATH, PUT, null, request));
   }
 
+  /**
+   * Calls the Update Profile method on the server.
+   * @param request new user info as json
+   * @return user info as json
+   */
   public static JSONObject updateProfile(JSONObject request) {
     return getJsonObject(call(MANAGE_PROFILE_PATH, PUT, null, request));
   }
 
+  /**
+   * Calls the Get Drink History method on the server.
+   * @return array of drinks consumed as json
+   */
   public static JSONArray getDrinkLog() {
     return getJsonArray(call(DRINK_HISTORY_PATH, GET, null, null));
   }
 
+  /**
+   * Calls the Get Friends method on the server.
+   * @return list of friend user info as json
+   */
   public static JSONArray getFriends() {
     return getJsonArray(call(FRIENDS_PATH, GET, null, null));
   }
 
+  /**
+   * Calls the Add Friend method on the server.
+   * @param email email of friend to add
+   * @return list of all friend user info as json
+   */
   public static JSONArray addFriend(String email) {
     Map<String, String> params = new HashMap<>();
     params.put("email", email);
     return getJsonArray(call(FRIENDS_PATH, PUT, params, new JSONObject()));
   }
 
+  /**
+   * Calls the Set BAC Visibility method on the server
+   * @param id id of friend to set visibility for
+   * @param visible if the user's BAC should be visible to the given friend
+   */
   public static void setVisibility(Long id, Boolean visible) {
     Map<String, String> params = new HashMap<>();
     params.put("id", id+"");
@@ -66,14 +99,25 @@ public class APICaller {
     call(FRIENDS_PATH, POST, params, new JSONObject());
   }
 
+  /**
+   * Calls the Get Profile method on the server.
+   * @return user profile info as json
+   */
   public static JSONObject getProfile() {
     return getJsonObject(call(MANAGE_PROFILE_PATH, GET, null, null));
   }
 
+  /**
+   * Calls the Get Catalog method on the server
+   * @return list of all drinks in the database as json
+   */
   public static JSONArray openCatalog(){
     return getJsonArray(call(MANAGE_DRINKS_PATH, GET, null, null));
   }
 
+  /**
+   * unused function
+   */
   public static JSONObject submitDrink(JSONObject request) {
     return getJsonObject(call(MANAGE_DRINKS_PATH, PUT, null, request));
   }
@@ -81,8 +125,6 @@ public class APICaller {
   public static String getCall(){
     return call("/drinks","GET",null, null);
   }
-
-  //TODO: add proper error handling
 
   /**
    * Makes a call to the server and returns its response as a String.

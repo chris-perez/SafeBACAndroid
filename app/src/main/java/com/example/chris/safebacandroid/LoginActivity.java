@@ -91,7 +91,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
   }
 
-
   private void populateAutoComplete() {
     getLoaderManager().initLoader(0, null, this);
   }
@@ -149,13 +148,21 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     }
   }
 
+  /**
+   * Checks that the given email has the right format.
+   * @param email email in question
+   * @return if the email has the proper format
+   */
   private boolean isEmailValid(String email) {
-    //TODO: Replace this with your own logic
     return email.contains("@");
   }
 
+  /**
+   * Checks that the given password matches password requirements.
+   * @param password password in question
+   * @return if the password matches password requirements
+   */
   private boolean isPasswordValid(String password) {
-    //TODO: Replace this with your own logic
     return password.length() > 4;
   }
 
@@ -215,6 +222,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         ContactsContract.Contacts.Data.IS_PRIMARY + " DESC");
   }
 
+  /**
+   * @return if the app has contacts permissions from the device.
+   */
   private boolean mayRequestContacts() {
     return checkCallingOrSelfPermission(READ_CONTACTS) == PackageManager.PERMISSION_GRANTED;
   }
@@ -320,7 +330,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         Toast toast = Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_SHORT);
         toast.show();
-        Intent intentMain = new Intent(getBaseContext(), Navigator_Activity.class);
+        Intent intentMain = new Intent(getBaseContext(), NavigatorActivity.class);
         startActivity(intentMain);
         finish();
       }

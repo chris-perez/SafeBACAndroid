@@ -7,16 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Filterable;
 import android.widget.Filter;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Steel on 5/1/16.
@@ -108,7 +101,6 @@ public class DrinkListAdapter extends BaseAdapter implements Filterable{
     /**
      * Allows filtering of list by user input
      */
-
     private class ItemFilter extends Filter{
         @Override
         protected FilterResults performFiltering(CharSequence constraint){

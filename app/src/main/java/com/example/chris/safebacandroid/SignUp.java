@@ -242,13 +242,21 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
     }
   }
 
+  /**
+   * Checks if the email given has the correct format.
+   * @param email email in question
+   * @return if the email is in the valid format
+   */
   private boolean isEmailValid(String email) {
-    //TODO: Replace this with your own logic
     return email.contains("@");
   }
 
+  /**
+   * Checks that the given password matches password requirements.
+   * @param password password in question
+   * @return if the password matches password requirements
+   */
   private boolean isPasswordValid(String password) {
-    //TODO: Replace this with your own logic
     return password.length() > 4;
   }
 
@@ -310,6 +318,9 @@ public class SignUp extends Activity implements LoaderCallbacks<Cursor>, OnClick
         ContactsContract.Contacts.Data.IS_PRIMARY + " DESC");
   }
 
+  /**
+   * @return if the app has contacts permissions from the device
+   */
   private boolean mayRequestContacts() {
     return checkCallingOrSelfPermission(READ_CONTACTS) == PackageManager.PERMISSION_GRANTED;
   }
