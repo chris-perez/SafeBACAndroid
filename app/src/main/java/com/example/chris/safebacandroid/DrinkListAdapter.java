@@ -7,16 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Filterable;
 import android.widget.Filter;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Steel on 5/1/16.
@@ -27,15 +20,15 @@ public class DrinkListAdapter extends BaseAdapter implements Filterable{
 
     private LayoutInflater inflater;
     private ItemFilter filter;
-    private ArrayList<Drink> completeData;
-    private ArrayList<Drink> filteredData;
+    private ArrayList<Drink1> completeData;
+    private ArrayList<Drink1> filteredData;
 
     /**
      * Adapter constructor
      * @param context activity containing list
      * @param data array of drinks to be applied to list
      */
-    public DrinkListAdapter(Context context, ArrayList<Drink> data){
+    public DrinkListAdapter(Context context, ArrayList<Drink1> data){
 
         inflater = LayoutInflater.from(context);
         filter = new ItemFilter();
@@ -62,7 +55,7 @@ public class DrinkListAdapter extends BaseAdapter implements Filterable{
         }
     }
     @Override
-    public Drink getItem(int position){
+    public Drink1 getItem(int position){
         if (filteredData == null || position >= filteredData.size()){
             return null;
         }else{
@@ -71,7 +64,7 @@ public class DrinkListAdapter extends BaseAdapter implements Filterable{
     }
     @Override
     public long getItemId(int position){
-        Drink temp = getItem(position);
+        Drink1 temp = getItem(position);
         if (temp != null) {
             return temp.getId();
         }else{
@@ -116,10 +109,10 @@ public class DrinkListAdapter extends BaseAdapter implements Filterable{
             String filterString = constraint.toString().toLowerCase();
             FilterResults results = new FilterResults();
 
-            ArrayList<Drink> temp_list = completeData;
+            ArrayList<Drink1> temp_list = completeData;
             int count = temp_list.size();
 
-            ArrayList<Drink> nlist = new ArrayList<>(count);
+            ArrayList<Drink1> nlist = new ArrayList<>(count);
             String filterable;
 
             for (int i = 0; i < count; i++){
@@ -136,7 +129,7 @@ public class DrinkListAdapter extends BaseAdapter implements Filterable{
         @SuppressWarnings("unchecked")
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results){
-            filteredData = (ArrayList<Drink>)results.values;
+            filteredData = (ArrayList<Drink1>)results.values;
             notifyDataSetChanged();
         }
     }

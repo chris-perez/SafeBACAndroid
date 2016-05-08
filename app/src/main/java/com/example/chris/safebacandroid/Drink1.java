@@ -3,13 +3,13 @@ package com.example.chris.safebacandroid;
 /**
  * Created by Steel on 5/4/16.
  */
-public class Drink {
+public class Drink1 {
 
     private int id;
     private String name, type;
     private double abv;
 
-    public Drink(int id, String name, double abv, String type){
+    public Drink1(int id, String name, double abv, String type){
         this.id = id;
         this.name = name;
         this.abv = abv;

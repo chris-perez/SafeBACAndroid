@@ -2,7 +2,6 @@ package com.example.chris.safebacandroid;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
@@ -35,7 +34,7 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
     private EditText VOL;
     private DrinkListAdapter ADAPTER;
     private View currentSelection;
-    private ArrayList<Drink> catalog;
+    private ArrayList<Drink1> catalog;
 
     private Button ADD_BUTTON;
     private Button UPDATE_BUTTON;
@@ -274,7 +273,7 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
      */
     private class RetrieveCatalogTask extends AsyncTask<Void, Void, JSONArray>{
 
-        ArrayList<Drink> drinksReciever;
+        ArrayList<Drink1> drinksReciever;
 
         @Override
         protected JSONArray doInBackground(Void... params){
@@ -294,7 +293,7 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
                     double abvTemp = jOb.getDouble("abv");
                     String typeTemp = jOb.getString("type");
                     if (typeTemp.equals(DRINK_TYPE)) {
-                        drinksReciever.add(new Drink(idTemp, nameTemp, abvTemp, typeTemp));
+                        drinksReciever.add(new Drink1(idTemp, nameTemp, abvTemp, typeTemp));
                     }
                 }
             }catch (JSONException e){

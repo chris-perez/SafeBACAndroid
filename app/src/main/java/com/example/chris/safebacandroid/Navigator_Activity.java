@@ -137,7 +137,6 @@ public class Navigator_Activity extends Activity {
       if (curr == 1) {
         next_activity = new Intent(this, ProfileActivity.class);
       } else if (curr == 2) {
-//                next_activity = new Intent(this, Calculator_Activity.class);
         return;
       } else if (curr == 3) {
         next_activity = new Intent(this, Catalog_Activity.class);
