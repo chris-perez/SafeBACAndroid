@@ -30,11 +30,18 @@ public class DrinkLogActivity extends Activity {
     new GetDrinkLogTask().execute((Void)null);
   }
 
+  /**
+   * Sets the adapter for the drink list view
+   * @param drinkLogItems items to be shown in the drinkListView
+   */
   private void setAdapter(List<DrinkLogItem> drinkLogItems) {
     drinkListView.setAdapter(new DrinkLogListAdapter(this, R.layout.drink_log_item, drinkLogItems));
 
   }
 
+  /**
+   * Handles the call to the server to get the Drink Log
+   */
   public class GetDrinkLogTask extends AsyncTask<Void, Void, JSONArray> {
     @Override
     protected JSONArray doInBackground(Void... params) {

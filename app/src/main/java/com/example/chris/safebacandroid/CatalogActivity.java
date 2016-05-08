@@ -10,7 +10,7 @@ import android.widget.ImageView;
 /**
  * Created by Steel on 4/25/16.
  */
-public class Catalog_Activity extends Activity {
+public class CatalogActivity extends Activity {
 
     ImageView current;
     int[] divisions;
@@ -56,10 +56,7 @@ public class Catalog_Activity extends Activity {
                             break;
                         }
                     }
-
-
                 return true;
-
             }
         });
     }
@@ -143,7 +140,7 @@ public class Catalog_Activity extends Activity {
     public void move(){
 
         if (curr > 0) {
-            Intent next_activity = new Intent(this, Catalog_Browser_Activity.class);
+            Intent next_activity = new Intent(this, CatalogBrowserActivity.class);
             Bundle par = new Bundle();
             par.putInt("Label", curr);
             next_activity.putExtras(par);

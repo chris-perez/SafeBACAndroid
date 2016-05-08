@@ -40,10 +40,18 @@ public class FriendsActivity extends Activity {
     new GetFriendsTask().execute((Void)null);
   }
 
+  /**
+   * Sets the adapter for the friendsListView
+   * @param friendItems items to be shown in the friendsListView
+   */
   private void setAdapter(List<FriendItem> friendItems) {
     friendsListView.setAdapter(new FriendAdapter(this, R.layout.friend_list_item, friendItems));
   }
 
+  /**
+   * Parses json array of friends and calls the methods to display them.
+   * @param jsonArray json array of friends.
+   */
   private void loadFriends(JSONArray jsonArray) {
     List<FriendItem> friendsList = new ArrayList<>();
     try {
@@ -66,6 +74,9 @@ public class FriendsActivity extends Activity {
     }
   }
 
+  /**
+   * Handles call to the server to get list of friends.
+   */
   public class GetFriendsTask extends AsyncTask<Void, Void, JSONArray> {
     @Override
     protected JSONArray doInBackground(Void... params) {
@@ -78,6 +89,9 @@ public class FriendsActivity extends Activity {
     }
   }
 
+  /**
+   * Handles call to the server to add a friend by email.
+   */
   public class AddFriendTask extends AsyncTask<Void, Void, JSONArray> {
     String email;
     public AddFriendTask(String email) {

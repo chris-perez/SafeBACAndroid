@@ -101,7 +101,6 @@ public class DrinkListAdapter extends BaseAdapter implements Filterable{
     /**
      * Allows filtering of list by user input
      */
-
     private class ItemFilter extends Filter{
         @Override
         protected FilterResults performFiltering(CharSequence constraint){

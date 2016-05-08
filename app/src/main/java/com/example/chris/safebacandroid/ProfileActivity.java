@@ -75,6 +75,9 @@ public class ProfileActivity extends Activity {
     new GetProfileTask().execute((Void) null);
   }
 
+  /**
+   * Parses form information and runs an UpdateProfileTask
+   */
   private void updateProfile() {
     // Store values at the time of the login attempt.
     String name = mNameView.getText().toString();
@@ -140,10 +143,18 @@ public class ProfileActivity extends Activity {
     }
   }
 
+  /**
+   * Checks if the email given has the correct format.
+   * @param email email in question
+   * @return if the email is in the valid format
+   */
   private boolean isEmailValid(String email) {
     return email.contains("@");
   }
 
+  /**
+   * Handles date format with Date Picker
+   */
   private void setDateTimeField() {
     mBirthdateView.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -164,6 +175,9 @@ public class ProfileActivity extends Activity {
     }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
   }
 
+  /**
+   * Handles call to the server to get profile information.
+   */
   public class GetProfileTask extends AsyncTask<Void, Void, JSONObject> {
     @Override
     protected JSONObject doInBackground(Void... params) {
@@ -194,6 +208,9 @@ public class ProfileActivity extends Activity {
     }
   }
 
+  /**
+   * Handles call to the server to update profile information.
+   */
   public class UpdateProfileTask extends AsyncTask<Void, Void, JSONObject> {
     private final String mName;
     private final String mEmail;

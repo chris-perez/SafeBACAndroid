@@ -34,12 +34,6 @@ public class MainActivity extends Activity {
         startActivity(new Intent(getBaseContext(), SignUp.class));
       }
     });
-    
-    //TODO: Remove before merge
-    /*
-    Intent navigator = new Intent(this, Navigator_Activity.class);
-    startActivity(navigator);
-    */
   }
 
 

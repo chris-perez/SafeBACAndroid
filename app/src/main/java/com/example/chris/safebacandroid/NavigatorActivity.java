@@ -16,7 +16,7 @@ import org.json.JSONObject;
 /**
  * Created by Steel on 4/25/16.
  */
-public class Navigator_Activity extends Activity {
+public class NavigatorActivity extends Activity {
 
   private ImageView current;
   private double currentBac;
@@ -139,7 +139,7 @@ public class Navigator_Activity extends Activity {
       } else if (curr == 2) {
         return;
       } else if (curr == 3) {
-        next_activity = new Intent(this, Catalog_Activity.class);
+        next_activity = new Intent(this, CatalogActivity.class);
       } else if (curr == 4) {
         next_activity = new Intent(this, DrinkLogActivity.class);
       } else if (curr == 5) {

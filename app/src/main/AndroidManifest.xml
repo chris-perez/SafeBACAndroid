@@ -31,13 +31,13 @@
         <activity android:name=".FriendsActivity">
         </activity>
         <activity
-            android:name=".Navigator_Activity">
+            android:name=".NavigatorActivity">
         </activity>
         <activity
-            android:name=".Catalog_Activity">
+            android:name=".CatalogActivity">
         </activity>
         <activity
-            android:name=".Catalog_Browser_Activity">
+            android:name=".CatalogBrowserActivity">
         </activity>
 
 

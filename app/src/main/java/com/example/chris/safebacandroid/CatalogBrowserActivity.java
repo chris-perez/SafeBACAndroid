@@ -24,7 +24,7 @@ import java.util.ArrayList;
 /**
  * Created by Steel on 4/25/16.
  */
-public class Catalog_Browser_Activity extends Activity implements View.OnClickListener{
+public class CatalogBrowserActivity extends Activity implements View.OnClickListener{
 
     public static final String ADDER_TAG = "adder_tag";
 
@@ -79,7 +79,13 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
         });
 
     }
-    public boolean isDouble(String num){
+
+  /**
+   * Finds if a string can be converted to a double.
+   * @param num string in question
+   * @return if num can be converted to a double
+   */
+  public boolean isDouble(String num){
         try{
             Double.parseDouble(num);
             return true;
@@ -104,15 +110,11 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
                     TextView itemId = (TextView)currentSelection.findViewById(R.id.unit_id);
 
                     submit_drink(itemId.getText().toString(), VOL.getText().toString());
-
                 }
-
                 break;
             default:
                 break;
         }
-
-
     }
 
     @Override
@@ -125,10 +127,9 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
     }
 
     /**
-     * shows top left icon to remind user of drink type currently being explored
+     * Shows top left icon to remind user of drink type currently being explored
      * @param drType drink type specification
      */
-
     public void show_label(int drType){
 
         ImageView banner = (ImageView)findViewById(R.id.beer_banner);
@@ -217,7 +218,7 @@ public class Catalog_Browser_Activity extends Activity implements View.OnClickLi
 
         }
         public void onTextChanged(CharSequence s, int start, int before, int count){
-            Catalog_Browser_Activity.this.ADAPTER.getFilter().filter(s.toString());
+            CatalogBrowserActivity.this.ADAPTER.getFilter().filter(s.toString());
         }
         public void afterTextChanged(Editable s){
 
