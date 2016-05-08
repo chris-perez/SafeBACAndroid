@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sex_array">
+        <item>male</item>
+        <item>female</item>
+    </string-array>
+    <color name="accent">#03B4E4</color>
+    <color name="background">#d6d6d6</color>
+    <color name="black00">#000000</color>
+    <color name="black01">#28000000</color>
+    <color name="black02">#64000000</color>
+    <color name="blueGrey00">#f0f8fa</color>
+    <color name="blueGrey01">#dae1e6</color>
+    <color name="blueTint">#3273b1c4</color>
+    <color name="darkBlue00">#384068</color>
+    <color name="grey00">#dadada</color>
+    <color name="grey01">#c7c7c7</color>
+    <color name="grey02">#acacac</color>
+    <color name="grey03">#414141</color>
+    <color name="lightBlue00">#5cbad9</color>
+    <color name="lightBlue01">#abd0dc</color>
+    <color name="lightBlue02">#d6e0e4</color>
+    <color name="orange00">#fda745</color>
+    <color name="orange01">#ffc880</color>
+    <color name="orange02">#ffbb62</color>
+    <color name="orange03">#ede0ce</color>
+    <color name="orange04">#ff9824</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="white00">#ffffff</color>
+    <color name="white01">#96ffffff</color>
+    <color name="white02">#3cffffff</color>
+    <declare-styleable name="RecyclerView"><attr format="string" name="layoutManager"/><attr name="android:orientation"/><attr format="integer" name="spanCount"/><attr format="boolean" name="reverseLayout"/><attr format="boolean" name="stackFromEnd"/></declare-styleable>
+    <declare-styleable name="SlidingUpPanelLayout"><attr format="dimension" name="umanoPanelHeight"/><attr format="dimension" name="umanoShadowHeight"/><attr format="dimension" name="umanoParallaxOffset"/><attr format="color" name="umanoFadeColor"/><attr format="integer" name="umanoFlingVelocity"/><attr format="reference" name="umanoDragView"/><attr format="reference" name="umanoScrollableView"/><attr format="boolean" name="umanoOverlay"/><attr format="boolean" name="umanoClipPanel"/><attr format="float" name="umanoAnchorPoint"/><attr format="enum" name="umanoInitialState"><enum name="expanded" value="0"/><enum name="collapsed" value="1"/><enum name="anchored" value="2"/><enum name="hidden" value="3"/></attr><attr format="reference" name="umanoScrollInterpolator"/></declare-styleable>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
+    <item name="item_touch_helper_previous_elevation" type="id"/>
+    <string name="ABV_Ulabel"><u>ABV</u></string>
+    <string name="action_settings">Settings</string>
+    <string name="action_sign_in">Log In</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="app_name">SafeBACAndroid</string>
+    <string name="catalogue_head">Drink Catalog</string>
+    <string name="custom_drink">CUSTOM DRINK</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="ex">!</string>
+    <string name="filter_hint">drink name or abv</string>
+    <string name="filter_label">Filter</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hi">HI</string>
+    <string name="name_Ulabel"><u>NAME</u></string>
+    <string name="new_drink">New Drink</string>
+    <string name="other">OTHER</string>
+    <string name="oz">OZ</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="update_bac">Update BAC</string>
+    <string name="volume">VOLUME</string>
+    <style name="AppTheme" parent="android:Theme.Material">
+        <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+    <style name="MyActionBar" parent="@android:style/Widget.Material.ActionBar">
+        <item name="android:background">@color/accent</item>
+    </style>
+</resources>

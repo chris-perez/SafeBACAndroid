@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_taxi.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\activity_taxi.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_catalog.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\activity_catalog.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\drink_log_item.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\drink_log_item.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_catalog_browser.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\activity_catalog_browser.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_main.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\fragment_main.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\friend_list_item.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\friend_list_item.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_navigator.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\activity_navigator.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\list.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_sign_up.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_profile.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\activity_profile.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_friends.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\activity_friends.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_drink_history.xml",
+        "source": "D:\\Documents\\GitHub\\SafeBACAndroid\\app\\src\\main\\res\\layout\\activity_drink_history.xml"
+    }
+]
